@@ -14,6 +14,7 @@ import Profile from "./pages/Profile";
 import Auth from "./pages/Auth";
 import ProfileSetup from "./pages/ProfileSetup";
 import NotFound from "./pages/NotFound";
+import VideoRoom from "./components/VideoRoom";
 
 const queryClient = new QueryClient();
 
@@ -59,6 +60,11 @@ const App = () => (
             <Route path="/profile" element={
               <ProtectedRoute>
                 <Profile />
+              </ProtectedRoute>
+            } />
+            <Route path="/room/:roomId" element={
+              <ProtectedRoute>
+                <VideoRoom />
               </ProtectedRoute>
             } />
             <Route path="*" element={<NotFound />} />
